@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { Empleado } from './empleado.model';
+import { EmpleadosService } from './empleados.service';
+import { ServicioEmpleadoService } from './servicio-empleado.service';
 
 @Component({
   selector: 'app-video16-directivas3',
@@ -8,27 +10,31 @@ import { Empleado } from './empleado.model';
 })
 export class Video16Directivas3Component {
 
-  empleados:Empleado[]=[
-    new Empleado("Rolando", "Osuna", "CEO", 45000),
-    new Empleado("Aristeo", "Ibarra", "CEO", 45000),
-    new Empleado("Alexis", "Hernandez", "CEO", 45000)
-  ];
+  
+  empleados:Empleado[]=[];
+  // CREACION DE LA INYECCIÓN
+  constructor(private empleadosService:EmpleadosService ){
+    this.empleados=this.empleadosService.empleados;
+  }
+
 
   cuadroNombre:string="";
   cuadroApellido:string="";
   cuadroCargo:string="";
   cuadroSalario:number=0;
-
+  
   agregarEmpleado(){
     let miEmpleado = new Empleado(this.cuadroNombre, this.cuadroApellido, this.cuadroCargo, this.cuadroSalario);
-    this.empleados.push(miEmpleado);
+    // VALIDACION DE CAMPOS VACIOS
     if(this.cuadroNombre == "" ||this.cuadroApellido == ""||this.cuadroCargo == ""||this.cuadroSalario == 0){
-      this.empleados.pop();
+      this.empleadosService.empleados.pop();
       alert("Completa todos los campos");
+    }else{
+      this.empleadosService.agregarEmpleadoServicio(miEmpleado);
     }
   }
   // CARACTERISTICAS-EMPLEADO
-  items = ['item1', 'item2', 'item3', 'item4'];
+  items = [''];
 
   addItem(newItem: string) {
     this.items.push(newItem);

@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { Video16Directivas3Component } from './video16-directivas3/video16-directivas3.component';
 import { Video19ComunicacionComponentesComponent } from './video16-directivas3/video19-comunicacion-componentes/video19-comunicacion-componentes.component';
 import { CaracteristicasEmpleadoComponent } from './video16-directivas3/caracteristicas-empleado/caracteristicas-empleado.component';
+import { ServicioEmpleadoService } from './video16-directivas3/servicio-empleado.service';
+import { EmpleadosService } from './video16-directivas3/empleados.service';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,7 @@ import { CaracteristicasEmpleadoComponent } from './video16-directivas3/caracter
     BrowserModule,
     FormsModule
   ],
-  providers: [],
+  providers: [ServicioEmpleadoService,EmpleadosService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

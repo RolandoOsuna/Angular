@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ServicioEmpleadoService } from './video16-directivas3/servicio-empleado.service';
 
 @Component({
   selector: 'app-root',
@@ -14,7 +15,7 @@ export class AppComponent {
   cargo:string="";
   entradas:any;
 
-  constructor(){
+  constructor(private miServicio:ServicioEmpleadoService){
     this.entradas = [
       {titulo:"C++"},
       {titulo:"C#"},
@@ -28,6 +29,8 @@ export class AppComponent {
     if(this.nombre == "" || this.apellido == ""){
       alert("Completa los campos");
     }else{
+      // INYECCION DE SERVICIOS
+      this.miServicio.muestraMensaje('Nombre del usuario es: '+ this.nombre);
       this.registrado = true;
     }
   }
