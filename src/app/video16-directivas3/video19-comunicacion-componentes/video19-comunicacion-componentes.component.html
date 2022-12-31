@@ -2,3 +2,9 @@
 <div class="" >
     {{empleadoDeLista.nombre}} {{empleadoDeLista.apellido}} {{empleadoDeLista.cargo}} {{empleadoDeLista.salario}}
 </div>
+<div class="">
+    <app-caracteristicas-empleado (newItemEvent)="addItem($event)"></app-caracteristicas-empleado>
+    <ul style="list-style-type: style none;">
+        <li *ngFor="let item of items">{{item}}</li>
+    </ul>
+</div>

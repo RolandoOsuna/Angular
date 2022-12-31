@@ -7,5 +7,10 @@ import { Empleado } from '../empleado.model';
   styleUrls: ['./video19-comunicacion-componentes.component.css']
 })
 export class Video19ComunicacionComponentesComponent {
+  items: any;
+  addItem($event: string) {
+    throw new Error('Method not implemented.');
+  } 
   @Input() empleadoDeLista:Empleado;
+
 }
