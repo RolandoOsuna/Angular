@@ -8,17 +8,33 @@ import { Video19ComunicacionComponentesComponent } from './video16-directivas3/v
 import { CaracteristicasEmpleadoComponent } from './video16-directivas3/caracteristicas-empleado/caracteristicas-empleado.component';
 import { ServicioEmpleadoService } from './video16-directivas3/servicio-empleado.service';
 import { EmpleadosService } from './video16-directivas3/empleados.service';
+import { HomeComponentComponent } from './video16-directivas3/home-component/home-component.component';
+import { ProyectosComponentComponent } from './video16-directivas3/proyectos-component/proyectos-component.component';
+import { QuienesComponentComponent } from './video16-directivas3/quienes-component/quienes-component.component';
+import { ContactoComponentComponent } from './video16-directivas3/contacto-component/contacto-component.component';
+import { Routes, RouterModule } from '@angular/router';
 
+const appRoutes: Routes=[
+  {path:'', component:HomeComponentComponent},
+  {path:'proyectos', component:ProyectosComponentComponent},
+  {path:'quienes-somos', component:QuienesComponentComponent},
+  {path:'contacto', component:ContactoComponentComponent}
+];
 @NgModule({
   declarations: [
     AppComponent,
     Video16Directivas3Component,
     Video19ComunicacionComponentesComponent,
-    CaracteristicasEmpleadoComponent
+    CaracteristicasEmpleadoComponent,
+    HomeComponentComponent,
+    ProyectosComponentComponent,
+    QuienesComponentComponent,
+    ContactoComponentComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [ServicioEmpleadoService,EmpleadosService],
   bootstrap: [AppComponent]
