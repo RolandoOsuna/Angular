@@ -1,19 +1,14 @@
-<p>proyectos-component works!</p>
+<p>actualiza-componet works!</p>
 <div class="container">
-
     <div class="row ">
-        <form class="d-flex " action="">
+        <form class="d-flex align-items-center " action="">
             <input class="form-control" type="text" name="nombre" id="nombre" [(ngModel)]="cuadroNombre" placeholder="Nombre">
             <input class="form-control mx-3" type="text" name="apellido" id="apellido" [(ngModel)]="cuadroApellido" placeholder="Apellido">
             <input class="form-control" type="text" name="cargo" id="cargo" [(ngModel)]="cuadroCargo" placeholder="Cargo">
             <input class="form-control mx-3" type="number" name="salario" id="salario" [(ngModel)]="cuadroSalario" placeholder="Salario">
-            <button class="btn btn-primary" type="submit" (click)="agregarEmpleado()">Registrar</button>
+            <button class="btn btn-primary" type="submit" (click)="actualizaEmpleado()">Actualizar</button> 
+            <button class="btn btn-danger ms-3" type="submit" (click)="eliminaEmpleado()">Eliminar</button>
         </form>
-    </div> <br>
-
-
-    <a href="/"><button  class="btn btn-primary">Home con href</button></a>
-    <button  class="btn btn-success" (click)="volverHome()">Home con funcion</button>
-
-    <router-outlet></router-outlet>
+    </div> 
 </div>
+

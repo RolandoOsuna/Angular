@@ -13,12 +13,17 @@ import { ProyectosComponentComponent } from './video16-directivas3/proyectos-com
 import { QuienesComponentComponent } from './video16-directivas3/quienes-component/quienes-component.component';
 import { ContactoComponentComponent } from './video16-directivas3/contacto-component/contacto-component.component';
 import { Routes, RouterModule } from '@angular/router';
-
+import { ActualizaComponetComponent } from './video16-directivas3/actualiza-componet/actualiza-componet.component';
+import { DataServises } from './data.services';
+import { HttpClientModule } from '@angular/common/http';
+import { LoginComponent } from './login/login.component';
 const appRoutes: Routes=[
   {path:'', component:HomeComponentComponent},
   {path:'proyectos', component:ProyectosComponentComponent},
   {path:'quienes-somos', component:QuienesComponentComponent},
-  {path:'contacto', component:ContactoComponentComponent}
+  {path:'contacto', component:ContactoComponentComponent},
+  {path:'login', component:LoginComponent},
+  {path:'actualiza/:id', component:ActualizaComponetComponent},
 ];
 @NgModule({
   declarations: [
@@ -29,14 +34,17 @@ const appRoutes: Routes=[
     HomeComponentComponent,
     ProyectosComponentComponent,
     QuienesComponentComponent,
-    ContactoComponentComponent
+    ContactoComponentComponent,
+    ActualizaComponetComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    HttpClientModule
   ],
-  providers: [ServicioEmpleadoService,EmpleadosService],
+  providers: [ServicioEmpleadoService,EmpleadosService, DataServises],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

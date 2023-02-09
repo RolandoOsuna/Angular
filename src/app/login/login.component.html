@@ -1,0 +1,13 @@
+<div class="container">
+    <form action="" class="form-group col-6">
+        <input name="email" class="form-control m-3 shadow" type="email" [(ngModel)]="email" placeholder="Email">
+        <input name="password" class="form-control m-3 shadow" type="password" [(ngModel)]="password" placeholder="Password">
+        <button class="btn btn-primary m-3 shadow" type="submit" value="login" (click)="login()">Login</button>
+    </form>
+    <p *ngIf="registrado; else sinRegistrar"><br> Bienvenido {{email}} {{password}}</p>
+    <p>{{identificador}}</p>
+
+    <ng-template #sinRegistrar >
+        <p>Nadie registrado</p>
+    </ng-template>
+</div>

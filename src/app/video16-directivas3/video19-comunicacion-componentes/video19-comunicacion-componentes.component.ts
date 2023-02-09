@@ -12,5 +12,6 @@ export class Video19ComunicacionComponentesComponent {
     throw new Error('Method not implemented.');
   } 
   @Input() empleadoDeLista:Empleado;
+  @Input() indice:number;
 
 }

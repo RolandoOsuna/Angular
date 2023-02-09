@@ -1,6 +1,8 @@
 <!-- <p>video19-comunicacion-componentes works!</p> -->
 <div class="" >
-    {{empleadoDeLista.nombre}} {{empleadoDeLista.apellido}} {{empleadoDeLista.cargo}} {{empleadoDeLista.salario}}
+    <a [routerLink]="['/actualiza',indice]">
+        {{indice+1}} {{empleadoDeLista.nombre}} {{empleadoDeLista.apellido}} {{empleadoDeLista.cargo}} {{empleadoDeLista.salario}}
+    </a>
 </div>
 <div class="">
     <app-caracteristicas-empleado (newItemEvent)="addItem($event)"></app-caracteristicas-empleado>
